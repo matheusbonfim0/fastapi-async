@@ -6,5 +6,5 @@ from sqlalchemy.orm import sessionmaker
 DATABASE_URL = getenv("DATABASE_URL")
 
 
-engine = create_async_engine("postgresql+asyncpg://admin:admin@localhost:5432/fastapi")
+engine = create_async_engine(DATABASE_URL)
 async_session = sessionmaker(engine, class_=AsyncSession)
